@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+    <ng-container *ngIf="serie.image != null; else elseTemplate">
+      <img class="card-img-top" [src]="serie.image" alt="Card image cap">  
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img  style="width: 50%;" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png" alt="Card image cap">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">{{serie.name}}</h5>
+      <a [routerLink]="[ '/detalle', id ]" class="btn btn-primary">Ver Detalles</a>
+      <div class="mt-3 card-footer">
+        Hora de emisión: {{serie.airtime}}
+      </div>
+    </div>
+  </div>

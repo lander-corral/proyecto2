@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">Series de {{dia.toISOString().substring(0,10)}}</h1>
+<input type="date" id="dia" value="{{dia.toISOString().substring(0,10)}}" name="trip-start" min="2018-01-01" max="{{hoy.toISOString().substring(0,10)}}"/>
+<select id="pais">
+    <option value="US">US</option>
+    <option value="ES">ES</option>
+    <option value="DE">DE</option>
+    <option value="FR">FR</option>
+</select>
+<button class="btn btn-primary" (click)="redirigir()">Redirigir</button>
+<div class="card-columns">
+    <app-serie *ngFor="let s of seriesList"
+        [serie]="s" [id]="s.id">
+    </app-serie>
+</div>

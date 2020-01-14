@@ -1,0 +1,13 @@
+<div class="card">
+    <ng-container *ngIf="serie.image != null; else elseTemplate">
+      <img class="card-img-top" [src]="serie.image" alt="Card image cap" style="width: 50%">  
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img class="card-img-top" style="width: 50%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png" alt="Card image cap">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">{{serie.name}}</h5>
+      <p [innerHTML]="serie.summary"></p>
+      <button class="btn btn-primary" (click)="volver()">Volver</button>
+    </div>
+  </div>
